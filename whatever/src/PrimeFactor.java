@@ -6,15 +6,14 @@ public class PrimeFactor {
          * 4 => 22 4%2 == 0 -> 2 4/2 => 2 2%2 == 0 -> 2
          */
         String result = "";
-        int primeNumber = 2;
-        while(number > 1) {
-            while (number % primeNumber == 0) {
+
+        for (int primeNumber = 2; number > 1; primeNumber++) {
+            for (; number % primeNumber == 0; 
+                    number = number / primeNumber) {
                 result = result + primeNumber;
-                number = number / primeNumber;
             }
-            primeNumber++;
         }
-        
+
         return result;
     }
 
